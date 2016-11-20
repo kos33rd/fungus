@@ -1,0 +1,97 @@
+@import '../node_modules/@angular/material/core/theming/all-theme';
+@import '../node_modules/@angular/material/core/core';
+// Plus imports for other components in your app.
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include md-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+
+/* Palette "Blue" from https://material.google.com/style/color.html#color-color-palette */
+$md-blue-base: (
+        50: #E3F2FD,
+        100: #BBDEFB,
+        200: #90CAF9,
+        300: #64B5F6,
+        400: #42A5F5,
+        500: #2196F3,
+        600: #1E88E5,
+        700: #1976D2,
+        800: #1565C0,
+        900: #0D47A1,
+        A100: #82B1FF,
+        A200: #448AFF,
+        A400: #2979FF,
+        A700: #2962FF,
+        contrast: (
+                50: $black-87-opacity,
+                100: $black-87-opacity,
+                200: $black-87-opacity,
+                300: white,
+                400: white,
+                500: $white-87-opacity,
+                600: $white-87-opacity,
+                700: $white-87-opacity,
+                800: $white-87-opacity,
+                900: $white-87-opacity,
+                A100: $black-87-opacity,
+                A200: white,
+                A400: white,
+                A700: $white-87-opacity,
+        )
+);
+
+$gpn-dark-color: #0070ba;
+$gpn-light-color: #2fb4e9;
+$gpn-base-color: $gpn-dark-color;
+
+$md-gpn-base: (
+        50: lighten($gpn-base-color, 95),
+        100: lighten($gpn-base-color, 75),
+        200: lighten($gpn-base-color, 55),
+        300: lighten($gpn-base-color, 40),
+        400: lighten($gpn-base-color, 20),
+        500: $gpn-base-color,
+        600: darken($gpn-base-color, 20),
+        700: darken($gpn-base-color, 40),
+        800: darken($gpn-base-color, 60),
+        900: darken($gpn-base-color, 80),
+        A100: #82B1FF,
+        A200: #448AFF,
+        A400: #2979FF,
+        A700: #2962FF,
+        contrast: (
+                50: $black-87-opacity,
+                100: $black-87-opacity,
+                200: $black-87-opacity,
+                300: white,
+                400: white,
+                500: $white-87-opacity,
+                600: $white-87-opacity,
+                700: $white-87-opacity,
+                800: $white-87-opacity,
+                900: $white-87-opacity,
+                A100: $black-87-opacity,
+                A200: white,
+                A400: white,
+                A700: $white-87-opacity,
+        )
+);
+
+
+$fungus-app-primary: md-palette($md-gpn-base);
+$fungus-app-accent:  md-palette($md-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$fungus-app-warn:    md-palette($md-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$fungus-app-theme: md-light-theme($fungus-app-primary, $fungus-app-accent, $fungus-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($fungus-app-theme);
