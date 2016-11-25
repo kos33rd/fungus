@@ -2,6 +2,7 @@
   "name": "angular-quickstart",
   "version": "1.0.0",
   "scripts": {
+    "install": "npm i -g node-sass",
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" \"npm run watch:sass\"",
     "lite": "lite-server",
     "tsc": "tsc",
@@ -41,6 +42,7 @@
     "@types/node": "^6.0.45",
     "concurrently": "^3.0.0",
     "lite-server": "^2.2.2",
-    "typescript": "^2.0.3"
+    "typescript": "^2.0.3",
+    "node-sass": "3.13.0"
   }
 }
